@@ -1,0 +1,15 @@
+{
+  "ts-node": {
+    // these options are overrides used only by ts-node
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
+  "compilerOptions": {
+    // ... other options
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "target": "es6",
+    "module": "commonjs",
+  }
+}

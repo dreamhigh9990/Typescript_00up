@@ -1,0 +1,463 @@
+{
+  "name": "editor",
+  "root": { "ref": "w-1" },
+  "controls": {
+    "w-1": {
+      "type": "object",
+      "archetype": "group",
+      "children": [ { "key": "disabled", "ref": "w-2" }, { "key": "label", "ref": "w-3" }, { "key": "valueOptions", "ref": "w-4" } ]
+    },
+    "w-2": {
+      "type": "object",
+      "archetype": "input:one-of",
+      "name": "native:boolean-property",
+      "label": "Disabled",
+      "invertedLabel": "Enabled",
+      "branchKey": "kind",
+      "branches": [
+        {
+          "name": "value",
+          "children": [ ]
+        },
+        {
+          "name": "formula",
+          "children": [ { "key": "formula", "ref": "w-5" } ]
+        },
+        {
+          "name": "resolver",
+          "children": [ { "key": "resolver", "ref": "w-6" } ]
+        }
+      ]
+    },
+    "w-3": {
+      "type": "object",
+      "archetype": "input:one-of",
+      "name": "native:property",
+      "label": "Label",
+      "branchKey": "kind",
+      "branches": [
+        {
+          "name": "value",
+          "children": [ { "key": "value", "ref": "w-7" } ]
+        },
+        {
+          "name": "formula",
+          "children": [ { "key": "formula", "ref": "w-8" } ]
+        },
+        {
+          "name": "resolver",
+          "children": [ { "key": "resolver", "ref": "w-9" } ]
+        }
+      ]
+    },
+    "w-4": {
+      "type": "object",
+      "archetype": "input:one-of",
+      "name": "native:property",
+      "label": "Value options",
+      "branchKey": "kind",
+      "branches": [
+        {
+          "name": "value",
+          "children": [ { "key": "value", "ref": "w-10" } ]
+        },
+        {
+          "name": "formula",
+          "children": [ { "key": "formula", "ref": "w-11" } ]
+        },
+        {
+          "name": "resolver",
+          "children": [ { "key": "resolver", "ref": "w-12" } ]
+        }
+      ]
+    },
+    "w-5": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:formula-input",
+      "label": "Formula",
+      "validators": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "formula"
+        }
+      ]
+    },
+    "w-6": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:select",
+      "label": "Resolver",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ],
+      "valueOptions": [
+        {
+          "value": "1",
+          "label": "Resolver 1"
+        },
+        {
+          "value": "2",
+          "label": "Resolver 2"
+        }
+      ]
+    },
+    "w-7": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:text-input",
+      "label": "Value",
+      "defaultValue": ""
+    },
+    "w-8": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:formula-input",
+      "label": "Formula",
+      "validators": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "formula"
+        }
+      ]
+    },
+    "w-9": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:select",
+      "label": "Resolver",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ],
+      "valueOptions": [
+        {
+          "value": "1",
+          "label": "Resolver 1"
+        },
+        {
+          "value": "2",
+          "label": "Resolver 2"
+        }
+      ]
+    },
+    "w-10": {
+      "type": "array",
+      "archetype": "input:ordered-list",
+      "name": "native:ordered-list",
+      "item": { "ref": "w-13" }
+    },
+    "w-11": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:formula-input",
+      "label": "Formula",
+      "validators": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "formula"
+        }
+      ]
+    },
+    "w-12": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:select",
+      "label": "Resolver",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ],
+      "valueOptions": [
+        {
+          "value": "1",
+          "label": "Resolver 1"
+        },
+        {
+          "value": "2",
+          "label": "Resolver 2"
+        }
+      ]
+    },
+    "w-13": {
+      "type": "object",
+      "archetype": "input:one-of",
+      "name": "native:property",
+      "label": "Option",
+      "branchKey": "kind",
+      "branches": [
+        {
+          "name": "value",
+          "children": [ { "key": "value", "ref": "w-14" } ]
+        },
+        {
+          "name": "formula",
+          "children": [ { "key": "formula", "ref": "w-15" } ]
+        },
+        {
+          "name": "resolver",
+          "children": [ { "key": "resolver", "ref": "w-16" } ]
+        }
+      ]
+    },
+    "w-14": {
+      "type": "object",
+      "archetype": "input:group",
+      "name": "native:group",
+      "children": [
+        { "key": "value", "ref": "w-17" },
+        { "key": "label", "ref": "w-18" },
+        { "key": "icon", "ref": "w-19" }
+      ]
+    },
+    "w-15": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:formula-input",
+      "label": "Formula",
+      "validators": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "formula"
+        }
+      ]
+    },
+    "w-16": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:select",
+      "label": "Resolver",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ],
+      "valueOptions": [
+        {
+          "value": "1",
+          "label": "Resolver 1"
+        },
+        {
+          "value": "2",
+          "label": "Resolver 2"
+        }
+      ]
+    },
+    "w-17": {
+      "type": "object",
+      "archetype": "input:one-of",
+      "name": "native:property",
+      "label": "Value",
+      "branchKey": "kind",
+      "branches": [
+        {
+          "name": "value",
+          "children": [ { "key": "value", "ref": "w-20" } ]
+        },
+        {
+          "name": "formula",
+          "children": [ { "key": "formula", "ref": "w-21" } ]
+        },
+        {
+          "name": "resolver",
+          "children": [ { "key": "resolver", "ref": "w-22" } ]
+        }
+      ]
+    },
+    "w-18":  {
+      "type": "object",
+      "archetype": "input:one-of",
+      "name": "native:property",
+      "label": "Label",
+      "branchKey": "kind",
+      "branches": [
+        {
+          "name": "value",
+          "children": [ { "key": "value", "ref": "w-23" } ]
+        },
+        {
+          "name": "formula",
+          "children": [ { "key": "formula", "ref": "w-24" } ]
+        },
+        {
+          "name": "resolver",
+          "children": [ { "key": "resolver", "ref": "w-25" } ]
+        }
+      ]
+    },
+    "w-19": {
+      "type": "object",
+      "archetype": "input:one-of",
+      "name": "native:property",
+      "label": "Icon",
+      "branchKey": "kind",
+      "branches": [
+        {
+          "name": "value",
+          "children": [
+            {
+              "key": "value",
+              "ref": "w-26"
+            }
+          ]
+        },
+        {
+          "name": "formula",
+          "children": [
+            {
+              "key": "formula",
+              "ref": "w-27"
+            }
+          ]
+        },
+        {
+          "name": "resolver",
+          "children": [
+            {
+              "key": "resolver",
+              "ref": "w-28"
+            }
+          ]
+        }
+      ]
+    },
+    "w-20": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:text-input",
+      "label": "Value",
+      "defaultValue": ""
+    },
+    "w-21": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:formula-input",
+      "label": "Formula",
+      "validators": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "formula"
+        }
+      ]
+    },
+    "w-22": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:select",
+      "label": "Resolver",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ],
+      "valueOptions": [
+        {
+          "value": "1",
+          "label": "Resolver 1"
+        },
+        {
+          "value": "2",
+          "label": "Resolver 2"
+        }
+      ]
+    },
+    "w-23": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:text-input",
+      "label": "Value",
+      "defaultValue": ""
+    },
+    "w-24": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:formula-input",
+      "label": "Formula",
+      "validators": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "formula"
+        }
+      ]
+    },
+    "w-25": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:select",
+      "label": "Resolver",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ],
+      "valueOptions": [
+        {
+          "value": "1",
+          "label": "Resolver 1"
+        },
+        {
+          "value": "2",
+          "label": "Resolver 2"
+        }
+      ]
+    },
+    "w-26": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:text-input",
+      "label": "Value",
+      "defaultValue": ""
+    },
+    "w-27": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:formula-input",
+      "label": "Formula",
+      "validators": [
+        {
+          "type": "required"
+        },
+        {
+          "type": "formula"
+        }
+      ]
+    },
+    "w-28": {
+      "type": "string",
+      "archetype": "input:generic",
+      "name": "native:select",
+      "label": "Resolver",
+      "validators": [
+        {
+          "type": "required"
+        }
+      ],
+      "valueOptions": [
+        {
+          "value": "1",
+          "label": "Resolver 1"
+        },
+        {
+          "value": "2",
+          "label": "Resolver 2"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,488 @@
+{
+  "name": "editor",
+  "root": {
+    "type": "object",
+    "archetype": "group",
+    "children": [
+      {
+        "key": "disabled",
+        "type": "object",
+        "archetype": "input:one-of",
+        "name": "native:boolean-property",
+        "label": "Disabled",
+        "invertedLabel": "Enabled",
+        "branchKey": "kind",
+        "branches": [
+          {
+            "name": "value",
+            "children": []
+          },
+          {
+            "name": "formula",
+            "children": [
+              {
+                "key": "formula",
+                "type": "string",
+                "archetype": "input:generic",
+                "name": "native:formula-input",
+                "label": "Formula",
+                "validators": [
+                  {
+                    "type": "required"
+                  },
+                  {
+                    "type": "formula"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "resolver",
+            "children": [
+              {
+                "key": "resolver",
+                "type": "string",
+                "archetype": "input:generic",
+                "name": "native:select",
+                "label": "Resolver",
+                "validators": [
+                  {
+                    "type": "required"
+                  }
+                ],
+                "valueOptions": [
+                  {
+                    "value": "1",
+                    "label": "Resolver 1"
+                  },
+                  {
+                    "value": "2",
+                    "label": "Resolver 2"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "label",
+        "type": "object",
+        "archetype": "input:one-of",
+        "name": "native:property",
+        "label": "Label",
+        "branchKey": "kind",
+        "branches": [
+          {
+            "name": "value",
+            "children": [
+              {
+                "key": "value",
+                "type": "string",
+                "archetype": "input:generic",
+                "name": "native:text-input",
+                "label": "Value",
+                "defaultValue": ""
+              }
+            ]
+          },
+          {
+            "name": "formula",
+            "children": [
+              {
+                "key": "formula",
+                "type": "string",
+                "archetype": "input:generic",
+                "name": "native:formula-input",
+                "label": "Formula",
+                "validators": [
+                  {
+                    "type": "required"
+                  },
+                  {
+                    "type": "formula"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "resolver",
+            "children": [
+              {
+                "key": "resolver",
+                "type": "string",
+                "archetype": "input:generic",
+                "name": "native:select",
+                "label": "Resolver",
+                "validators": [
+                  {
+                    "type": "required"
+                  }
+                ],
+                "valueOptions": [
+                  {
+                    "value": "1",
+                    "label": "Resolver 1"
+                  },
+                  {
+                    "value": "2",
+                    "label": "Resolver 2"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "valueOptions",
+        "type": "object",
+        "archetype": "input:one-of",
+        "name": "native:property",
+        "label": "Value options",
+        "branchKey": "kind",
+        "branches": [
+          {
+            "name": "value",
+            "children": [
+              {
+                "key": "value",
+                "type": "array",
+                "archetype": "input:ordered-list",
+                "name": "native:ordered-list",
+                "item": {
+                  "type": "object",
+                  "archetype": "input:one-of",
+                  "name": "native:property",
+                  "label": "Option",
+                  "branchKey": "kind",
+                  "branches": [
+                    {
+                      "name": "value",
+                      "children": [
+                        {
+                          "key": "value",
+                          "type": "object",
+                          "archetype": "input:group",
+                          "name": "native:group",
+                          "children": [
+                            {
+                              "key": "value",
+                              "type": "object",
+                              "archetype": "input:one-of",
+                              "name": "native:property",
+                              "label": "Value",
+                              "branchKey": "kind",
+                              "branches": [
+                                {
+                                  "name": "value",
+                                  "children": [
+                                    {
+                                      "key": "value",
+                                      "type": "string",
+                                      "archetype": "input:generic",
+                                      "name": "native:text-input",
+                                      "label": "Value",
+                                      "defaultValue": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "formula",
+                                  "children": [
+                                    {
+                                      "key": "formula",
+                                      "type": "string",
+                                      "archetype": "input:generic",
+                                      "name": "native:formula-input",
+                                      "label": "Formula",
+                                      "validators": [
+                                        {
+                                          "type": "required"
+                                        },
+                                        {
+                                          "type": "formula"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "resolver",
+                                  "children": [
+                                    {
+                                      "key": "resolver",
+                                      "type": "string",
+                                      "archetype": "input:generic",
+                                      "name": "native:select",
+                                      "label": "Resolver",
+                                      "validators": [
+                                        {
+                                          "type": "required"
+                                        }
+                                      ],
+                                      "valueOptions": [
+                                        {
+                                          "value": "1",
+                                          "label": "Resolver 1"
+                                        },
+                                        {
+                                          "value": "2",
+                                          "label": "Resolver 2"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "key": "label",
+                              "type": "object",
+                              "archetype": "input:one-of",
+                              "name": "native:property",
+                              "label": "Label",
+                              "branchKey": "kind",
+                              "branches": [
+                                {
+                                  "name": "value",
+                                  "children": [
+                                    {
+                                      "key": "value",
+                                      "type": "string",
+                                      "archetype": "input:generic",
+                                      "name": "native:text-input",
+                                      "label": "Value",
+                                      "defaultValue": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "formula",
+                                  "children": [
+                                    {
+                                      "key": "formula",
+                                      "type": "string",
+                                      "archetype": "input:generic",
+                                      "name": "native:formula-input",
+                                      "label": "Formula",
+                                      "validators": [
+                                        {
+                                          "type": "required"
+                                        },
+                                        {
+                                          "type": "formula"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "resolver",
+                                  "children": [
+                                    {
+                                      "key": "resolver",
+                                      "type": "string",
+                                      "archetype": "input:generic",
+                                      "name": "native:select",
+                                      "label": "Resolver",
+                                      "validators": [
+                                        {
+                                          "type": "required"
+                                        }
+                                      ],
+                                      "valueOptions": [
+                                        {
+                                          "value": "1",
+                                          "label": "Resolver 1"
+                                        },
+                                        {
+                                          "value": "2",
+                                          "label": "Resolver 2"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "key": "icon",
+                              "type": "object",
+                              "archetype": "input:one-of",
+                              "name": "native:property",
+                              "label": "Icon",
+                              "branchKey": "kind",
+                              "branches": [
+                                {
+                                  "name": "value",
+                                  "children": [
+                                    {
+                                      "key": "value",
+                                      "type": "string",
+                                      "archetype": "input:generic",
+                                      "name": "native:text-input",
+                                      "label": "Value",
+                                      "defaultValue": ""
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "formula",
+                                  "children": [
+                                    {
+                                      "key": "formula",
+                                      "type": "string",
+                                      "archetype": "input:generic",
+                                      "name": "native:formula-input",
+                                      "label": "Formula",
+                                      "validators": [
+                                        {
+                                          "type": "required"
+                                        },
+                                        {
+                                          "type": "formula"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "name": "resolver",
+                                  "children": [
+                                    {
+                                      "key": "resolver",
+                                      "type": "string",
+                                      "archetype": "input:generic",
+                                      "name": "native:select",
+                                      "label": "Resolver",
+                                      "validators": [
+                                        {
+                                          "type": "required"
+                                        }
+                                      ],
+                                      "valueOptions": [
+                                        {
+                                          "value": "1",
+                                          "label": "Resolver 1"
+                                        },
+                                        {
+                                          "value": "2",
+                                          "label": "Resolver 2"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "formula",
+                      "children": [
+                        {
+                          "key": "formula",
+                          "type": "string",
+                          "archetype": "input:generic",
+                          "name": "native:formula-input",
+                          "label": "Formula",
+                          "validators": [
+                            {
+                              "type": "required"
+                            },
+                            {
+                              "type": "formula"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "resolver",
+                      "children": [
+                        {
+                          "key": "resolver",
+                          "type": "string",
+                          "archetype": "input:generic",
+                          "name": "native:select",
+                          "label": "Resolver",
+                          "validators": [
+                            {
+                              "type": "required"
+                            }
+                          ],
+                          "valueOptions": [
+                            {
+                              "value": "1",
+                              "label": "Resolver 1"
+                            },
+                            {
+                              "value": "2",
+                              "label": "Resolver 2"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "name": "formula",
+            "children": [
+              {
+                "key": "formula",
+                "type": "string",
+                "archetype": "input:generic",
+                "name": "native:formula-input",
+                "label": "Formula",
+                "validators": [
+                  {
+                    "type": "required"
+                  },
+                  {
+                    "type": "formula"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "resolver",
+            "children": [
+              {
+                "key": "resolver",
+                "type": "string",
+                "archetype": "input:generic",
+                "name": "native:select",
+                "label": "Resolver",
+                "validators": [
+                  {
+                    "type": "required"
+                  }
+                ],
+                "valueOptions": [
+                  {
+                    "value": "1",
+                    "label": "Resolver 1"
+                  },
+                  {
+                    "value": "2",
+                    "label": "Resolver 2"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
